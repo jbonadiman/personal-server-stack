@@ -1,0 +1,23 @@
+version: '3.9'
+volumes:
+  shiori:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/joao/data/shiori
+
+networks:
+  exposed:
+    external: true
+
+services:
+  shiori:
+    image: ghcr.io/go-shiori/shiori
+    restart: unless-stopped
+    container_name: shiori
+    command: "serve --webroot /shiori/"
+    ports:
+      - "8080:8080"
+    volumes:
+      - "shiori:/shiori"
