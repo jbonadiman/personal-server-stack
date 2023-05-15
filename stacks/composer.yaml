@@ -9,7 +9,11 @@ volumes:
 
 networks:
   exposed:
+    name: exposed
     external: true
+  shiori:
+    name: shiori
+    driver: bridge
 
 services:
   shiori:
@@ -21,3 +25,6 @@ services:
       - "8080:8080"
     volumes:
       - "shiori:/shiori"
+    networks:
+      - shiori
+      - exposed
