@@ -13,6 +13,31 @@
         "bookmarks"
       ],
       "platform": "linux",
+      "env": [
+        {
+          "name": "SHIORI_DIR",
+          "label": "Specifies Shiori data location"
+        },
+        {
+          "name": "SHIORI_DBMS",
+          "label": "Specifies which database engine to use",
+          "select": [
+            {
+              "text": "MySQL",
+              "value": "mysql"
+            },
+            {
+              "text": "PostgreSQL",
+              "value": "postgresql"
+            },
+            {
+              "text": "SQLite",
+              "value": "",
+              "default": true
+            }
+          ]
+        }
+      ],
       "repository": {
         "url": "https://github.com/jbonadiman/seven-wonders-containers",
         "stackfile": "shiori/composer.yml"
