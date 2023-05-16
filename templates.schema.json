@@ -268,19 +268,19 @@
                   "properties": {
                     "name": {
                       "type": "string",
-                      "description": "the name of the environment variable, as supported in the container image"
+                      "description": "The name of the environment variable, as supported in the container image"
                     },
                     "label": {
                       "type": "string",
-                      "description": "label for the input in the UI"
+                      "description": "Label for the input in the UI"
                     },
                     "description": {
                       "type": "string",
-                      "description": "a short description for this input, will be available as a tooltip in the UI"
+                      "description": "A short description for this input, will be available as a tooltip in the UI"
                     },
                     "default": {
                       "type": "string",
-                      "description": "default value associated to the variable"
+                      "description": "Default value associated to the variable"
                     },
                     "preset": {
                       "type": "boolean",
@@ -306,7 +306,7 @@
                           "value"
                         ]
                       },
-                      "description": "an array of possible values, will generate a select input"
+                      "description": "An array of possible values, will generate a select input"
                     }
                   },
                   "required": [
