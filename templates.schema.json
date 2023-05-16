@@ -53,7 +53,7 @@
                 "type": "string",
                 "description": "The command to run in the container. If not specified, the container will use the default command in its Dockerfile",
                 "examples": [
-                  "{\"command\": \"/bin/bash -c 'echo hello' && exit 777\"}"
+                  "/bin/bash -c 'echo hello' && exit 777"
                 ]
               },
               "env": {

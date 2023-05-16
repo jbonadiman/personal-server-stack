@@ -3,17 +3,27 @@
   "version": "2",
   "templates": [
     {
-      "type": 3,
+      "type": 1,
       "title": "shiori",
       "description": "Shiori is a simple bookmarks manager written in Go language. Intended as a simple clone of Pocket. You can use it as command line application or as web application.",
-      "name": "shiori",
       "categories": [
         "open-source",
         "self-hosted",
         "bookmarks"
       ],
+      "image": "ghcr.io/go-shiori/shiori",
+      "ports": [
+        "8080/tcp"
+      ],
+      "name": "shiori",
+      "administrator-only": false,
       "platform": "linux",
+      "command": "serve --webroot ${BASE_URL}",
       "env": [
+        {
+          "name": "BASE_URL",
+          "label": "Base URL of the application",
+        },
         {
           "name": "DATA_LOCATION",
           "label": "Data location on host"
@@ -92,11 +102,7 @@
           "label": "SHIORI_PG_PORT",
           "description": "Port number used by PostgreSQL server"
         }
-      ],
-      "repository": {
-        "url": "https://github.com/jbonadiman/personal-server-stack",
-        "stackfile": "stacks/shiori-composer.yaml"
-      }
+      ]
     }
   ]
 }
