@@ -15,12 +15,22 @@
       "platform": "linux",
       "env": [
         {
+          "name": "DATA_LOCATION",
+          "label": "Data location on host"
+        },
+        {
+          "name": "PORT",
+          "label": "Port to listen to"
+        },
+        {
           "name": "SHIORI_DIR",
-          "label": "Specifies Shiori data location"
+          "label": "SHIORI_DIR",
+          "description": "Specifies Shiori data location"
         },
         {
           "name": "SHIORI_DBMS",
-          "label": "Specifies which database engine to use",
+          "label": "SHIORI_DBMS",
+          "description": "Specifies which database engine to use",
           "select": [
             {
               "text": "MySQL",
@@ -36,10 +46,55 @@
               "default": true
             }
           ]
+        },
+        {
+          "name": "SHIORI_MYSQL_USER",
+          "label": "SHIORI_MYSQL_USER",
+          "description": "Name of MySQL user"
+        },
+        {
+          "name": "SHIORI_MYSQL_PASS",
+          "label": "SHIORI_MYSQL_PASS",
+          "description": "Password for the above user"
+        },
+        {
+          "name": "SHIORI_MYSQL_NAME",
+          "label": "SHIORI_MYSQL_NAME",
+          "description": "Name of database to use"
+        },
+        {
+          "name": "SHIORI_MYSQL_ADDRESS",
+          "label": "SHIORI_MYSQL_ADDRESS",
+          "description": "Address of MySQL server, e.g. tcp(127.0.0.1:3306) or unix(/tmp/mysqld.sock)"
+        },
+        {
+          "name": "SHIORI_PG_USER",
+          "label": "SHIORI_PG_USER",
+          "description": "Name of PostgreSQL user"
+        },
+        {
+          "name": "SHIORI_PG_PASS",
+          "label": "SHIORI_PG_PASS",
+          "description": "Password for the above user"
+        },
+        {
+          "name": "SHIORI_PG_NAME",
+          "label": "SHIORI_PG_NAME",
+          "description": "Name of database to use"
+        },
+        {
+          "name": "SHIORI_PG_HOST",
+          "label": "SHIORI_PG_HOST",
+          "description": "Address of PostgreSQL server"
+        },
+        {
+          "name": "SHIORI_PG_PORT",
+          "label": "SHIORI_PG_PORT",
+          "description": "Port number used by PostgreSQL server"
         }
       ],
       "repository": {
-        "url": "https://github.com/jbonadiman/seven-wonders-containers",
+        "url": "https://github.com/jbonadiman/personal-server-stack",
         "stackfile": "shiori/composer.yml"
       }
     }
