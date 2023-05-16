@@ -5,7 +5,7 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: {{ DATA_LOCATION }}
+      device: $DATA_LOCATION
 
 networks:
   exposed:
@@ -22,19 +22,19 @@ services:
     container_name: shiori
     command: "serve --webroot /shiori/"
     environment:
-      SHIORI_DIR: {{ SHIORI_DIR }}
-      SHIORI_DBMS: {{ SHIORI_DBMS }}
-      SHIORI_MYSQL_USER: {{ SHIORI_MYSQL_USER }}
-      SHIORI_MYSQL_PASS: {{ SHIORI_MYSQL_PASS }}
-      SHIORI_MYSQL_NAME: {{ SHIORI_MYSQL_NAME }}
-      SHIORI_MYSQL_ADDRESS: {{ SHIORI_MYSQL_ADDRESS }}
-      SHIORI_PG_USER: {{ SHIORI_PG_USER }}
-      SHIORI_PG_PASS: {{ SHIORI_PG_PASS }}
-      SHIORI_PG_NAME: {{ SHIORI_PG_NAME }}
-      SHIORI_PG_HOST: {{ SHIORI_PG_HOST }}
-      SHIORI_PG_PORT: {{ SHIORI_PG_PORT }}
+      SHIORI_DIR: $SHIORI_DIR
+      SHIORI_DBMS: $SHIORI_DBMS
+      SHIORI_MYSQL_USER: $SHIORI_MYSQL_USER
+      SHIORI_MYSQL_PASS: $SHIORI_MYSQL_PASS
+      SHIORI_MYSQL_NAME: $SHIORI_MYSQL_NAME
+      SHIORI_MYSQL_ADDRESS: $SHIORI_MYSQL_ADDRESS
+      SHIORI_PG_USER: $SHIORI_PG_USER
+      SHIORI_PG_PASS: $SHIORI_PG_PASS
+      SHIORI_PG_NAME: $SHIORI_PG_NAME
+      SHIORI_PG_HOST: $SHIORI_PG_HOST
+      SHIORI_PG_PORT: $SHIORI_PG_PORT
     ports:
-      - "{{ PORT }}:8080"
+      - "$PORT:8080"
     volumes:
       - "shiori:/shiori"
     networks:
