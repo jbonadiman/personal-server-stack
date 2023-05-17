@@ -117,6 +117,7 @@
         "25565:25565/tcp",
         "25565:25565/udp"
       ],
+      "network": "exposed",
       "name": "minecraft-server",
       "administrator-only": false,
       "platform": "linux",
