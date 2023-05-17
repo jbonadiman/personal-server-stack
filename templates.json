@@ -22,7 +22,7 @@
       "env": [
         {
           "name": "BASE_URL",
-          "label": "Base URL of the application",
+          "label": "Base URL of the application"
         },
         {
           "name": "DATA_LOCATION",
@@ -101,6 +101,69 @@
           "name": "SHIORI_PG_PORT",
           "label": "SHIORI_PG_PORT",
           "description": "Port number used by PostgreSQL server"
+        }
+      ]
+    },
+    {
+      "type": 1,
+      "title": "minecraft-server",
+      "description": "Docker Minecraft PaperMC server for 1.19, 1.18, 1.17 for AMD64 and ARM64 platforms. Works on Synology, Raspberry Pi 4 or any other systems that support docker.",
+      "categories": [
+        "game",
+        "self-hosted"
+      ],
+      "image": "marctv/minecraft-papermc-server:latest",
+      "ports": [
+        "25565:25565/tcp",
+        "25565:25565/udp"
+      ],
+      "name": "minecraft server",
+      "administrator-only": false,
+      "platform": "linux",
+      "volumes": [
+        {
+          "container": "/data"
+        }
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "Id of the user running the container"
+        },
+        {
+          "name": "PGID",
+          "label": "Id of the group running the container"
+        },
+        {
+          "name": "SKIP_PERM_CHECK",
+          "label": "Skips permission check, since the user is being setted above",
+          "preset": true,
+          "default": "true"
+        },
+        {
+          "name": "MEMORYSIZE",
+          "label": "Memory size in GB. Not more than 70% of the total memory in your system.",
+          "default": "1G"
+        },
+        {
+          "name": "TZ",
+          "label": "Timezone for the container",
+          "select": [
+            {
+              "text": "Etc/UTC (+00:00)",
+              "value": "Etc/UTC",
+              "default": true
+            },
+            {
+              "text": "America/Sao_Paulo (-03:00)",
+              "value": "America/Sao_Paulo"
+            }
+          ]
+        },
+        {
+          "name": "PAPERMC_FLAGS",
+          "label": "Command-line flags for PaperMC. Defaults to \"--nojline\".",
+          "default": "--nojline"
         }
       ]
     }
