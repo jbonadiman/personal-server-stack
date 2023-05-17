@@ -117,6 +117,7 @@
         "25565:25565/tcp",
         "25565:25565/udp"
       ],
+      "restart_policy": "unless-stopped",
       "network": "exposed",
       "name": "minecraft-server",
       "administrator-only": false,
