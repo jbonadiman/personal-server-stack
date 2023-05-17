@@ -137,12 +137,6 @@
           "label": "Id of the group running the container"
         },
         {
-          "name": "SKIP_PERM_CHECK",
-          "label": "Skips permission check, since the user is being setted above",
-          "preset": true,
-          "default": "true"
-        },
-        {
           "name": "MEMORYSIZE",
           "label": "Memory size in GB. Not more than 70% of the total memory in your system.",
           "default": "1G"
