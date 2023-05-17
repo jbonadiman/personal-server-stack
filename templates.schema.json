@@ -23,7 +23,7 @@
               },
               "title": {
                 "type": "string",
-                "description": "The template title"
+                "description": "The template title (shows in the app template list)"
               },
               "description": {
                 "type": "string",
@@ -225,7 +225,7 @@
               },
               "title": {
                 "type": "string",
-                "description": "The template title"
+                "description": "The template title (shows in the app template list)"
               },
               "description": {
                 "type": "string",
