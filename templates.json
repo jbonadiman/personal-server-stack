@@ -25,13 +25,9 @@
       "restart_policy": "unless-stopped",
       "network": "exposed",
       "administrator-only": false,
+      "note": "Override `command` with `serve --webroot <PATH>` to host on subfolders paths (eg.: domain.com/shiori).",
       "platform": "linux",
-      "command": "serve --webroot {{ BASE_URL }}",
       "env": [
-        {
-          "name": "BASE_URL",
-          "label": "Base URL of the application"
-        },
         {
           "name": "SHIORI_DBMS",
           "label": "SHIORI_DBMS",
