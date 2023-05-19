@@ -26,7 +26,7 @@
       "network": "exposed",
       "administrator-only": false,
       "platform": "linux",
-      "command": "serve --webroot ${BASE_URL}",
+      "command": "serve --webroot {{ BASE_URL }}",
       "env": [
         {
           "name": "BASE_URL",
