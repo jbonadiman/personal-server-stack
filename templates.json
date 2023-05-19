@@ -10,18 +10,20 @@
         "webserver"
       ],
       "platform": "linux",
+      "name": "nginx",
+      "network": "exposed",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/nginx.png",
-      "image": "nginx:latest",
+      "image": "nginx:alpine",
       "ports": [
         "80/tcp",
         "443/tcp"
       ],
       "volumes": [
         {
-          "container": "/etc/nginx"
+          "container": "/etc/nginx/conf.d"
         },
         {
-          "container": "/usr/share/nginx/html"
+          "container": "/etc/nginx/certs"
         }
       ]
     },
