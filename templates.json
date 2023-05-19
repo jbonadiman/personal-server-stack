@@ -13,10 +13,17 @@
         "bookmarks"
       ],
       "image": "ghcr.io/go-shiori/shiori",
-      "ports": [
-        "8080/tcp"
-      ],
       "name": "shiori",
+      "ports": [
+        "8080:8080/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/shiori"
+        }
+      ],
+      "restart_policy": "unless-stopped",
+      "network": "exposed",
       "administrator-only": false,
       "platform": "linux",
       "command": "serve --webroot ${BASE_URL}",
@@ -24,19 +31,6 @@
         {
           "name": "BASE_URL",
           "label": "Base URL of the application"
-        },
-        {
-          "name": "DATA_LOCATION",
-          "label": "Data location on host"
-        },
-        {
-          "name": "PORT",
-          "label": "Port to listen to"
-        },
-        {
-          "name": "SHIORI_DIR",
-          "label": "SHIORI_DIR",
-          "description": "Specifies Shiori data location"
         },
         {
           "name": "SHIORI_DBMS",
