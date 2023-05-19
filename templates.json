@@ -112,6 +112,7 @@
         "game",
         "self-hosted"
       ],
+      "logo": "./logos/minecraft-server.png",
       "image": "marctv/minecraft-papermc-server:latest",
       "ports": [
         "25565:25565/tcp",
