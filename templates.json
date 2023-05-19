@@ -25,7 +25,7 @@
       "restart_policy": "unless-stopped",
       "network": "exposed",
       "administrator-only": false,
-      "note": "Override `command` with `serve --webroot <PATH>` to host on subfolders paths (eg.: domain.com/shiori).",
+      "note": "Override 'command' with 'serve --webroot [PATH]' to host on subfolders paths (eg.: domain.com/shiori).",
       "platform": "linux",
       "env": [
         {
