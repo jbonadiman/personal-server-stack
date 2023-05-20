@@ -29,6 +29,65 @@
     },
     {
       "type": 1,
+      "title": "duplicati",
+      "description": "Duplicati is a free, open source, backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers.",
+      "categories": [
+        "backups",
+        "self-hosted"
+      ],
+      "logo": "https://raw.githubusercontent.com/duplicati/duplicati/master/Assets/application%20icon/application_icon.ico",
+      "image": "lscr.io/linuxserver/duplicati:latest",
+      "ports": [
+        "8200:8200/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "network": "exposed",
+      "name": "duplicati",
+      "administrator-only": false,
+      "platform": "linux",
+      "volumes": [
+        {
+          "container": "/config"
+        },
+        {
+          "container": "/backups"
+        },
+        {
+          "container": "/source"
+        }
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "Id of the user running the container"
+        },
+        {
+          "name": "PGID",
+          "label": "Id of the group running the container"
+        },
+        {
+          "name": "CLI_ARGS",
+          "label": "Optionally specify any CLI variables you want to launch the app with."
+        },
+        {
+          "name": "TZ",
+          "label": "Timezone for the container",
+          "select": [
+            {
+              "text": "Etc/UTC (+00:00)",
+              "value": "Etc/UTC",
+              "default": true
+            },
+            {
+              "text": "America/Sao_Paulo (-03:00)",
+              "value": "America/Sao_Paulo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": 1,
       "title": "shiori",
       "description": "Shiori is a simple bookmarks manager written in Go language. Intended as a simple clone of Pocket. You can use it as command line application or as web application.",
       "logo": "https://raw.githubusercontent.com/go-shiori/shiori/master/internal/view/res/apple-touch-icon-152x152.png",
