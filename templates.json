@@ -55,7 +55,10 @@
           "container": "/data"
         },
         {
-          "container": "/source"
+          "container": "/etc/passwd"
+        },
+        {
+          "container": "/etc/group"
         }
       ],
       "env": [
