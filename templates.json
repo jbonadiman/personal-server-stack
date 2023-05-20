@@ -20,10 +20,12 @@
       ],
       "volumes": [
         {
-          "container": "/etc/nginx/conf.d"
+          "container": "/etc/nginx/conf.d",
+          "read_only": true
         },
         {
-          "container": "/etc/nginx/certs"
+          "container": "/etc/nginx/certs",
+          "read_only": true
         }
       ]
     },
@@ -55,10 +57,12 @@
           "container": "/data"
         },
         {
-          "container": "/etc/passwd"
+          "container": "/etc/passwd",
+          "read_only": true
         },
         {
-          "container": "/etc/group"
+          "container": "/etc/group",
+          "read_only": true
         }
       ],
       "env": [
@@ -113,7 +117,8 @@
           "container": "/backups"
         },
         {
-          "container": "/source"
+          "container": "/source",
+          "read_only": true
         }
       ],
       "env": [
