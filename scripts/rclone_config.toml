@@ -1,0 +1,23 @@
+[remotes.storj]
+gives = [
+    "appdata",
+]
+
+[remotes.mega]
+receives = [
+    "books"
+]
+
+[remotes.onedrive]
+receives = [
+    "appdata",
+    "musics",
+    "books",
+]
+
+[remotes.onedrive-estacio]
+receives = [
+    "appdata",
+    "musics",
+    "books",
+]
