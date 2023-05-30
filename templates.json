@@ -4,6 +4,61 @@
   "templates": [
     {
       "type": 1,
+      "title": "fresh rss",
+      "description": "FreshRSS is a self-hosted RSS feed aggregator",
+      "categories": [
+        "webserver"
+      ],
+      "platform": "linux",
+      "name": "freshrss",
+      "network": "exposed",
+      "logo": "https://raw.githubusercontent.com/FreshRSS/FreshRSS/edge/docs/img/FreshRSS-logo.png",
+      "image": "freshrss/freshrss:latest",
+      "ports": [
+        "80/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "volumes": [
+        {
+          "container": "/var/www/FreshRSS/data"
+        },
+        {
+          "container": "/var/www/FreshRSS/extensions"
+        }
+      ],
+      "env": [
+        {
+          "name": "UID",
+          "label": "Id of the user running the container"
+        },
+        {
+          "name": "GID",
+          "label": "Id of the group running the container"
+        },
+        {
+          "name": "TZ",
+          "label": "Timezone for the container",
+          "select": [
+            {
+              "text": "Etc/UTC (+00:00)",
+              "value": "Etc/UTC",
+              "default": true
+            },
+            {
+              "text": "America/Sao_Paulo (-03:00)",
+              "value": "America/Sao_Paulo"
+            }
+          ]
+        },
+        {
+          "name": "CRON_MIN",
+          "label": "Define minutes for the built-in cron job to automatically refresh feeds (see below for more advanced options)",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "type": 1,
       "title": "nginx",
       "description": "High performance web server",
       "categories": [
@@ -14,6 +69,7 @@
       "network": "exposed",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/nginx.png",
       "image": "nginx:alpine",
+      "restart_policy": "unless-stopped",
       "ports": [
         "80/tcp",
         "443/tcp"
@@ -45,6 +101,7 @@
       "ports": [
         "80/tcp"
       ],
+      "restart_policy": "unless-stopped",
       "command": "serve",
       "volumes": [
         {
