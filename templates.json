@@ -31,6 +31,58 @@
     },
     {
       "type": 1,
+      "title": "ntfy",
+      "description": "ntfy (pronounce: notify) is a simple HTTP-based pub-sub notification service",
+      "categories": [
+        "notification",
+        "self-hosted"
+      ],
+      "platform": "linux",
+      "name": "ntfy",
+      "network": "exposed",
+      "logo": "https://raw.githubusercontent.com/binwiederhier/ntfy/main/web/public/static/images/ntfy.png",
+      "image": "binwiederhier/ntfy:latest",
+      "ports": [
+        "80/tcp"
+      ],
+      "command": "serve",
+      "volumes": [
+        {
+          "container": "/var/cache/ntfy"
+        },
+        {
+          "container": "/etc/ntfy",
+          "read_only": true
+        }
+      ],
+      "env": [
+        {
+          "name": "UID",
+          "label": "Id of the user running the container"
+        },
+        {
+          "name": "GID",
+          "label": "Id of the group running the container"
+        },
+        {
+          "name": "TZ",
+          "label": "Timezone for the container",
+          "select": [
+            {
+              "text": "Etc/UTC (+00:00)",
+              "value": "Etc/UTC",
+              "default": true
+            },
+            {
+              "text": "America/Sao_Paulo (-03:00)",
+              "value": "America/Sao_Paulo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": 1,
       "title": "duplicati",
       "description": "Duplicati is a free, open source, backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers.",
       "categories": [
