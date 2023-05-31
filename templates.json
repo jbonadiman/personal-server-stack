@@ -14,26 +14,23 @@
       "name": "freshrss",
       "network": "exposed",
       "logo": "https://raw.githubusercontent.com/FreshRSS/FreshRSS/edge/docs/img/FreshRSS-logo.png",
-      "image": "freshrss/freshrss:latest",
+      "image": "linuxserver/freshrss:latest",
       "ports": [
         "80/tcp"
       ],
       "restart_policy": "unless-stopped",
       "volumes": [
         {
-          "container": "/var/www/FreshRSS/data"
-        },
-        {
-          "container": "/var/www/FreshRSS/extensions"
+          "container": "/config"
         }
       ],
       "env": [
         {
-          "name": "UID",
+          "name": "PUID",
           "label": "Id of the user running the container"
         },
         {
-          "name": "GID",
+          "name": "PGID",
           "label": "Id of the group running the container"
         },
         {
