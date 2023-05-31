@@ -47,11 +47,6 @@
               "value": "America/Sao_Paulo"
             }
           ]
-        },
-        {
-          "name": "CRON_MIN",
-          "label": "Define minutes for the built-in cron job to automatically refresh feeds (see below for more advanced options)",
-          "default": ""
         }
       ]
     },
