@@ -7,7 +7,8 @@
       "title": "fresh rss",
       "description": "FreshRSS is a self-hosted RSS feed aggregator",
       "categories": [
-        "webserver"
+        "self-hosted",
+        "rss"
       ],
       "platform": "linux",
       "name": "freshrss",
@@ -204,7 +205,6 @@
       "description": "Shiori is a simple bookmarks manager written in Go language. Intended as a simple clone of Pocket. You can use it as command line application or as web application.",
       "logo": "https://raw.githubusercontent.com/go-shiori/shiori/master/internal/view/res/apple-touch-icon-152x152.png",
       "categories": [
-        "open-source",
         "self-hosted",
         "bookmarks"
       ],
