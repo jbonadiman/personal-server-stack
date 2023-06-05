@@ -149,7 +149,7 @@
       "name": "kopia",
       "administrator-only": false,
       "platform": "linux",
-      "command": "server start --disable-csrf-token-checks --insecure --address=0.0.0.0:51515",
+      "command": "server start --disable-csrf-token-checks --insecure --address=0.0.0.0:51515 --server-username=admin --server-password=admin",
       "volumes": [
         {
           "container": "/app/config",
@@ -163,6 +163,9 @@
         },
         {
           "container": "/app/rclone"
+        },
+        {
+          "container": "/tmp:shared"
         }
       ],
       "env": [
