@@ -62,7 +62,7 @@
       "logo": "https://raw.githubusercontent.com/rclone/rclone/master/graphics/logo/logo_symbol/logo_symbol_color_128px.png",
       "image": "rclone/rclone:latest",
       "restart_policy": "unless-stopped",
-      "command": "--rc-addr :5572",
+      "command": "rc --rc-addr :5572",
       "ports": [
         "5572/tcp"
       ],
