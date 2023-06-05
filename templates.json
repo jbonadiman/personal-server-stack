@@ -133,46 +133,46 @@
     },
     {
       "type": 1,
-      "title": "duplicati",
-      "description": "Duplicati is a free, open source, backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers.",
+      "title": "kopia",
+      "description": "Kopia is a fast and secure open-source backup/restore tool that allows you to create encrypted snapshots of your data and save the snapshots to remote or cloud storage of your choice, to network-attached storage or server, or locally on your machine.",
       "categories": [
         "backups",
         "self-hosted"
       ],
-      "logo": "https://raw.githubusercontent.com/duplicati/duplicati/master/Assets/application%20icon/application_icon.ico",
-      "image": "lscr.io/linuxserver/duplicati:latest",
+      "logo": "https://raw.githubusercontent.com/kopia/kopia/master/icons/kopia.svg",
+      "image": "kopia/kopia:latest",
       "ports": [
-        "8200:8200/tcp"
+        "51515/tcp"
       ],
       "restart_policy": "unless-stopped",
       "network": "exposed",
-      "name": "duplicati",
+      "name": "kopia",
       "administrator-only": false,
       "platform": "linux",
+      "command": "server start --address=0.0.0.0:51515",
       "volumes": [
         {
-          "container": "/config"
+          "container": "/app/config",
+          "readonly": true
         },
         {
-          "container": "/backups"
+          "container": "/app/cache"
         },
         {
-          "container": "/source",
-          "read_only": true
+          "container": "/app/logs"
+        },
+        {
+          "container": "/app/rclone"
         }
       ],
       "env": [
         {
-          "name": "PUID",
-          "label": "Id of the user running the container"
+          "name": "KOPIA_PASSWORD",
+          "label": "Repository password"
         },
         {
-          "name": "PGID",
-          "label": "Id of the group running the container"
-        },
-        {
-          "name": "CLI_ARGS",
-          "label": "Optionally specify any CLI variables you want to launch the app with."
+          "name": "USER",
+          "label": "Repository user"
         },
         {
           "name": "TZ",
