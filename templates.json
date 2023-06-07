@@ -218,18 +218,6 @@
           ]
         },
         {
-          "name": "AUTHELIA_JWT_SECRET_FILE",
-          "label": "JWT secret key file path",
-          "preset": true,
-          "default": "/secrets/JWT_SECRET"
-        },
-        {
-          "name": "AUTHELIA_SESSION_SECRET_FILE",
-          "label": "Session secret key file path",
-          "preset": true,
-          "default": "/secrets/SESSION_SECRET"
-        },
-        {
           "name": "AUTHELIA_STORAGE_ENCRYPTION_KEY_FILE",
           "label": "Encryption key file path",
           "preset": true,
