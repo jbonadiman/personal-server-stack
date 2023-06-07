@@ -102,6 +102,21 @@
       ],
       "env": [
         {
+          "name": "AUTHELIA_AUTHENTICATION_BACKEND_PASSWORD_RESET_DISABLE",
+          "label": "Disable password reset",
+          "default": "false"
+        },
+        {
+          "name": "AUTHELIA_AUTHENTICATION_BACKEND_FILE_PATH",
+          "label": "The path to the file with the user details list",
+          "default": "/config/users.yml"
+        },
+        {
+          "name": "AUTHELIA_AUTHENTICATION_BACKEND_PASSWORD_RESET_DISABLE",
+          "label": "Disable password reset",
+          "default": "false"
+        },
+        {
           "name": "AUTHELIA_NOTIFIER_SMTP_HOST",
           "label": "The hostname of the SMTP server"
         },
