@@ -64,7 +64,7 @@
       "logo": "https://raw.githubusercontent.com/thomiceli/opengist/master/public/favicon.svg",
       "image": "ghcr.io/thomiceli/opengist:latest",
       "restart_policy": "unless-stopped",
-      "command": "opengist --config config.yml",
+      "command": "./opengist --config ~/.opengist/config.yml",
       "ports": [
         "6157:6157/tcp"
       ],
