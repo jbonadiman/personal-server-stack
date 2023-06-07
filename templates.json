@@ -64,19 +64,13 @@
       "logo": "https://raw.githubusercontent.com/thomiceli/opengist/master/public/favicon.svg",
       "image": "ghcr.io/thomiceli/opengist:latest",
       "restart_policy": "unless-stopped",
+      "command": "opengist --config config.yml",
       "ports": [
         "6157:6157/tcp"
       ],
       "volumes": [
         {
           "container": "/root/.opengist"
-        }
-      ],
-      "env": [
-        {
-          "name": "CONFIG",
-          "label": "Configuration",
-          "default": "github.client-key: <value>\ngithub.secret: <value>\n"
         }
       ]
     },
