@@ -107,6 +107,25 @@
           "default": "/config/authelia.db"
         },
         {
+          "name": "AUTHELIA_ACCESS_CONTROL_DEFAULT_POLICY",
+          "label": "Default access control policy",
+          "select": [
+            {
+              "text": "Deny",
+              "value": "deny",
+              "default": true
+            },
+            {
+              "text": "One factor",
+              "value": "one_factor"
+            },
+            {
+              "text": "Two factor",
+              "value": "two_factor"
+            }
+          ]
+        },
+        {
           "name": "AUTHELIA_THEME",
           "label": "Theme",
           "select": [
