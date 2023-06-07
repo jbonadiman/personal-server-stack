@@ -102,6 +102,34 @@
       ],
       "env": [
         {
+          "name": "AUTHELIA_NOTIFIER_SMTP_HOST",
+          "label": "The hostname of the SMTP server"
+        },
+        {
+          "name": "AUTHELIA_NOTIFIER_SMTP_PORT",
+          "label": "The port the SMTP service is listening on"
+        },
+        {
+          "name": "AUTHELIA_NOTIFIER_SMTP_USERNAME",
+          "label": "The username sent for authentication with the SMTP server"
+        },
+        {
+          "name": "AUTHELIA_NOTIFIER_SMTP_SENDER",
+          "label": "The sender is used to construct both the SMTP command MAIL FROM and to add the FROM header",
+          "description": "This address must be in RFC5322 format"
+        },
+        {
+          "name": "AUTHELIA_NOTIFIER_SMTP_SUBJECT",
+          "label": "This is the subject Authelia will use in the email",
+          "default": "[Authelia] {title}"
+        },
+        {
+          "name": "AUTHELIA_NOTIFIER_SMTP_PASSWORD_FILE",
+          "label": "SMTP password file path",
+          "default": "/secrets/SMTP_PASSWORD",
+          "preset": true
+        },
+        {
           "name": "AUTHELIA_STORAGE_LOCAL_PATH",
           "label": "SQLite database path",
           "default": "/config/authelia.db"
