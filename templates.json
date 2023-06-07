@@ -244,7 +244,15 @@
       ],
       "volumes": [
         {
-          "container": "/etc/nginx",
+          "container": "/etc/nginx/conf.d",
+          "read_only": true
+        },
+        {
+          "container": "/etc/nginx/snippets",
+          "read_only": true
+        },
+        {
+          "container": "/etc/nginx/certs",
           "read_only": true
         }
       ]
