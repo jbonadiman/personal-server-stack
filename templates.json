@@ -76,6 +76,101 @@
     },
     {
       "type": 1,
+      "title": "authelia",
+      "description": "Authelia is an open-source authentication and authorization server providing two-factor authentication and single sign-on (SSO) for your applications via a web portal. It acts as a companion for reverse proxies by allowing, denying, or redirecting requests.",
+      "categories": [
+        "authentication",
+        "self-hosted"
+      ],
+      "platform": "linux",
+      "name": "authelia",
+      "network": "exposed",
+      "logo": "https://camo.githubusercontent.com/6dcb546c18d2ff34f4f23e9b5bd60ee1e75e2c899bb46fb716c432a1f6d2db19/68747470733a2f2f7777772e61757468656c69612e636f6d2f696d616765732f61757468656c69612d7469746c652e706e67",
+      "image": "authelia/authelia:latest",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        "8000:8000/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/config"
+        },
+        {
+          "container": "/secrets",
+          "readonly": true
+        }
+      ],
+      "env": [
+        {
+          "name": "AUTHELIA_STORAGE_LOCAL_PATH",
+          "label": "SQLite database path"
+        },
+        {
+          "name": "AUTHELIA_THEME",
+          "label": "Theme",
+          "select": [
+            {
+              "text": "Light",
+              "value": "light"
+            },
+            {
+              "text": "Dark",
+              "value": "dark",
+              "default": true
+            },
+            {
+              "text": "Grey",
+              "value": "grey"
+            }
+          ]
+        },
+        {
+          "name": "AUTHELIA_SERVER_PORT",
+          "label": "Server port",
+          "default": "8000",
+          "preset": true
+        },
+        {
+          "name": "AUTHELIA_DEFAULT_2FA_METHOD",
+          "label": "Default 2FA method",
+          "select": [
+            {
+              "text": "TOTP",
+              "value": "totp",
+              "default": true
+            },
+            {
+              "text": "WebAuthn",
+              "value": "webauthn"
+            },
+            {
+              "text": "Mobile Push",
+              "value": "mobile_push"
+            }
+          ]
+        },
+        {
+          "name": "AUTHELIA_JWT_SECRET_FILE",
+          "label": "JWT secret key file path",
+          "preset": true,
+          "default": "/secrets/JWT_SECRET"
+        },
+        {
+          "name": "AUTHELIA_SESSION_SECRET_FILE",
+          "label": "Session secret key file path",
+          "preset": true,
+          "default": "/secrets/SESSION_SECRET"
+        },
+        {
+          "name": "AUTHELIA_STORAGE_ENCRYPTION_KEY_FILE",
+          "label": "Encryption key file path",
+          "preset": true,
+          "default": "/secrets/STORAGE_ENCRYPTION_KEY"
+        }
+      ]
+    },
+    {
+      "type": 1,
       "title": "nginx",
       "description": "High performance web server",
       "categories": [
