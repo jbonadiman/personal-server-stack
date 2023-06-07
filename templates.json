@@ -89,7 +89,7 @@
       "image": "authelia/authelia:latest",
       "restart_policy": "unless-stopped",
       "ports": [
-        "8000:8000/tcp"
+        "8383:8383/tcp"
       ],
       "volumes": [
         {
