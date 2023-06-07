@@ -52,6 +52,29 @@
     },
     {
       "type": 1,
+      "title": "opengist",
+      "description": "A self-hosted pastebin powered by Git.",
+      "categories": [
+        "pastebin",
+        "self-hosted"
+      ],
+      "platform": "linux",
+      "name": "opengist",
+      "network": "exposed",
+      "logo": "https://raw.githubusercontent.com/thomiceli/opengist/master/public/favicon.svg",
+      "image": "ghcr.io/thomiceli/opengist:latest",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        "6157/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/root/.opengist"
+        }
+      ]
+    },
+    {
+      "type": 1,
       "title": "nginx",
       "description": "High performance web server",
       "categories": [
