@@ -65,11 +65,18 @@
       "image": "ghcr.io/thomiceli/opengist:latest",
       "restart_policy": "unless-stopped",
       "ports": [
-        "6157/tcp"
+        "6157:6157/tcp"
       ],
       "volumes": [
         {
           "container": "/root/.opengist"
+        }
+      ],
+      "env": [
+        {
+          "name": "CONFIG",
+          "label": "Configuration",
+          "default": "github.client-key: <value>\ngithub.secret: <value>\n"
         }
       ]
     },
