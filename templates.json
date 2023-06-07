@@ -103,7 +103,8 @@
       "env": [
         {
           "name": "AUTHELIA_STORAGE_LOCAL_PATH",
-          "label": "SQLite database path"
+          "label": "SQLite database path",
+          "default": "/config/authelia.db"
         },
         {
           "name": "AUTHELIA_THEME",
