@@ -89,7 +89,7 @@
       "image": "authelia/authelia:latest",
       "restart_policy": "unless-stopped",
       "ports": [
-        "8383:8383/tcp"
+        "9091:9091/tcp"
       ],
       "volumes": [
         {
@@ -195,7 +195,7 @@
         {
           "name": "AUTHELIA_SERVER_PORT",
           "label": "Server port",
-          "default": "8000",
+          "default": "9091",
           "preset": true
         },
         {
