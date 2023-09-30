@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$id": "https://raw.githubusercontent.com/jbonadiman/seven-wonders-containers/main/templates.schema.json",
+  "$id": "https://raw.githubusercontent.com/jbonadiman/personal-server-stack/main/templates.schema.json",
   "type": "object",
   "properties": {
     "version": {
